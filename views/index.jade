@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1= 'Socket.io & Redis Application Sample'
+  p#connection Connecting...
+
+  h3 Broadcast to All
+  input#i-all(type='text', placeholder='Message to all', disabled)
+  button#b-all(disabled) submit message
+  div#message-all
+    ul
+
+  h3 Broadcast to room
+  p
+    input#i-join(type='text', placeholder='room name', disabled)
+    button#b-join(disabled) join room
+  p
+    input#i-room-name(type='text', placeholder='room name', disabled)
+    input#i-room-message(type='text', placeholder='Message to room', disabled)
+    button#b-room(disabled) submit message
+  div#message-room
+    ul
+
+
+  script(src='http://code.jquery.com/jquery-1.10.1.min.js')
+  script(src='/socket.io/socket.io.js')
+  script(src='/javascripts/index.js')
