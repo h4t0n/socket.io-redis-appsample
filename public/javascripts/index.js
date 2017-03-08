@@ -1,10 +1,9 @@
 (function ($) {
-    var socket = io(document.location.origin+'/mynamespace');
-
+    var socket = io(document.location.origin + '/mynamespace');
     var start = new Date();
 
     socket.on('connect', function () {
-        var index = socket.io.engine.upgrade ? 1 : 0;
+        const index = socket.io.engine.upgrade ? 1 : 0;
         $('#connection').text('Connection established in ' + (new Date() - start) + 'msec. ' +
             'SocketID: ' + socket.id + '. ' +
             'You are using ' + socket.io.engine.transports[index] + '.');
