@@ -3,7 +3,7 @@
     var start = new Date();
 
     socket.on('connect', function () {
-        const index = socket.io.engine.upgrade ? 1 : 0;
+        var index = socket.io.engine.upgrade ? 1 : 0;
         $('#connection').text('Connection established in ' + (new Date() - start) + 'msec. ' +
             'SocketID: ' + socket.id + '. ' +
             'You are using ' + socket.io.engine.transports[index] + '.');
