@@ -1,6 +1,5 @@
 (function ($) {
-    var socket = io(document.location.origin+'/mynamespace');
-
+    var socket = io(document.location.origin + '/mynamespace');
     var start = new Date();
 
     socket.on('connect', function () {
